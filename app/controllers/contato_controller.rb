@@ -20,7 +20,7 @@ class ContatoController < ApplicationController
         Contato.create!(nome: nome, email:email, observacao:observacao)
 
         flash["success"] = "Contato cadastrado com sucesso"
-        redirect_to "/"
+        redirect_to "/contatos"
     end
 
     def atualizar
@@ -51,5 +51,13 @@ class ContatoController < ApplicationController
 
     def editar
         @contato = Contato.find(params[:id])
+    end
+
+    def excluir
+        contato = Contato.find(params["id"])
+        contato.destroy
+
+        flash["success"] = "Contato excluido com sucesso"
+        render json: {}, status: 204
     end
 end

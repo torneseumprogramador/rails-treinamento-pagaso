@@ -15,3 +15,20 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
+
+const excluir = async (url) => {
+    if(confirm("Confirma ?")){
+        try { 
+            const token = document.querySelector("meta[name='csrf-token']").content;
+            const urlWithToken = `${url}?authenticity_token=${encodeURIComponent(token)}`;
+            const response = await fetch(urlWithToken, { method: 'DELETE' });
+            if (response.ok) {
+                window.location.reload()
+            } else {
+                alert('Erro ao excluir o contato.');
+            }
+        } catch (error) {
+            alert('Ocorreu um erro na requisição.' + error.message);
+        }
+    }
+}

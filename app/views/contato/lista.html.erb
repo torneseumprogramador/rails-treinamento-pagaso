@@ -2,6 +2,8 @@
     <div class="row py-lg-5" style="text-align: center;">
       <div class="col-lg-6 col-md-8 mx-auto" style="float: none;display: inline-block;">
         <h1 class="fw-light">Lista de contatos</h1>
+
+        <a href="/contato" class="btn btn-primary">Novo</a>
         
         <hr>
 
@@ -26,7 +28,7 @@
                 <td><%= contato.updated_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
                 <td>
                   <a href="/contato/<%= contato.id %>/editar" class="btn btn-warning btn-acoes">Editar</a>
-                  <a href="/contato/<%= contato.id %>/excluir" class="btn btn-danger btn-acoes">Excluir</a>
+                  <a href="#" onclick="excluir('/contato/<%= contato.id %>/excluir')" class="btn btn-danger btn-acoes">Excluir</a>
                 </td>
               </tr>
             <% end %>
