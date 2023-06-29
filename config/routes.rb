@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get "sobre", to: "home#sobre"
+  get "contatos", to: "contato#lista"
   get "contato", to: "contato#index"
   post "contato/cadastrar", to: "contato#cadastrar"
 end

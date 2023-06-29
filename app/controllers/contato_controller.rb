@@ -22,4 +22,8 @@ class ContatoController < ApplicationController
         flash["success"] = "Contato cadastrado com sucesso"
         redirect_to "/"
     end
+
+    def lista
+        @contatos = Contato.all
+    end
 end
