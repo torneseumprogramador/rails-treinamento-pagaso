@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "contato/cadastrar", to: "contato#cadastrar"
 
   get "contato/:id/editar", to: "contato#editar"
-  post "contato/:id/atualizar", to: "contato#atualizar"
+  put "contato/:id/atualizar", to: "contato#atualizar"
   # get "contato/:id/excluir", to: "contato#excluir"
   delete "contato/:id/excluir", to: "contato#excluir"
   

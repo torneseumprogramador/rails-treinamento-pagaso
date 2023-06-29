@@ -42,11 +42,11 @@ class ContatoController < ApplicationController
         @contato.save!
 
         flash["success"] = "Contato atualizado com sucesso"
-        redirect_to "/contatos"
+        render json: @contato.to_json, status: 200
     end
 
     def lista
-        @contatos = Contato.all
+        @contatos = Contato.all.order(id: :asc)
     end
 
     def editar

@@ -32,3 +32,37 @@ const excluir = async (url) => {
         }
     }
 }
+
+
+const atualizar = async (event) => {
+    try {
+      event.preventDefault();
+      const form = event.target
+  
+      const url = form.action;
+      const formData = new FormData(form);
+  
+      const body = {};
+      formData.forEach((value, key) => {
+        body[key] = value;
+      });
+
+      const response = await fetch(url, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(body)
+      });
+  
+      if (response.ok) {
+        console.log('Contato atualizado com sucesso.');
+        window.location.href = "/contatos"
+      } else {
+        alert('Erro ao atualizar o contato.');
+      }
+    } catch (error) {
+      alert('Ocorreu um erro na requisição.' + error.message);
+    }
+};
+  

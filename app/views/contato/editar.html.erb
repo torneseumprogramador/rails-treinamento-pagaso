@@ -8,7 +8,8 @@
 
         <div style="text-align: left">
 
-          <form action="/contato/<%= @contato.id %>/atualizar" method="post">
+          <form action="/contato/<%= @contato.id %>/atualizar" method="post" onsubmit="atualizar(event)">
+            <!--input type="hidden" name="_method" value="put"-->
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
             <div class="form-group">
