@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   get "contatos", to: "contato#lista"
   get "contato", to: "contato#index"
   post "contato/cadastrar", to: "contato#cadastrar"
+
+  get "contato/:id/editar", to: "contato#editar"
+  post "contato/:id/atualizar", to: "contato#atualizar"
+  
 end

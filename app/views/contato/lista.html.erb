@@ -13,6 +13,7 @@
               <th>Observação</th>
               <th>Criado em</th>
               <th>Atualizado em</th>
+              <th>Ações</th>
             </tr>
           </thead>
           <tbody>
@@ -23,6 +24,10 @@
                 <td><%= contato.observacao %></td>
                 <td><%= contato.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
                 <td><%= contato.updated_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+                <td>
+                  <a href="/contato/<%= contato.id %>/editar" class="btn btn-warning btn-acoes">Editar</a>
+                  <a href="/contato/<%= contato.id %>/excluir" class="btn btn-danger btn-acoes">Excluir</a>
+                </td>
               </tr>
             <% end %>
           </tbody>
