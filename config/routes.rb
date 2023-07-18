@@ -3,13 +3,20 @@ Rails.application.routes.draw do
 
   root 'home#index'
   get "sobre", to: "home#sobre"
-  get "contatos", to: "contato#lista"
-  get "contato", to: "contato#index"
-  post "contato/cadastrar", to: "contato#cadastrar"
+  
+  # get "contatos", to: "contato#lista"
+  # get "contato", to: "contato#index"
+  # post "contato/cadastrar", to: "contato#cadastrar"
 
-  get "contato/:id/editar", to: "contato#editar"
-  put "contato/:id/atualizar", to: "contato#atualizar"
-  # get "contato/:id/excluir", to: "contato#excluir"
-  delete "contato/:id/excluir", to: "contato#excluir"
+  # post "contatos", to: "contato#cadastrar"
+  # patch "contatos/:id", to: "contato#atualizar"
+  
+  # get "contato/:id/editar", to: "contato#editar"
+  # put "contato/:id/atualizar", to: "contato#atualizar"
+  # # get "contato/:id/excluir", to: "contato#excluir"
+  # delete "contato/:id/excluir", to: "contato#excluir"
+
+
+  resources :contatos
   
 end

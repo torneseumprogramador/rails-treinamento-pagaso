@@ -119,10 +119,20 @@ const atualizar = async (event) => {
       const form = event.target
   
       const url = form.action;
-      const formData = new FormData(form);
+      // const formData = new FormData(form);
   
+      // const body = {};
+      // formData.forEach((value, key) => {
+      //   body[key] = value;
+      // });
+
+      // debugger
+
       const body = {};
-      formData.forEach((value, key) => {
+      const inputs = form.querySelectorAll('input, textarea');
+      inputs.forEach(input => {
+        const key = input.name;
+        const value = input.value;
         body[key] = value;
       });
 
