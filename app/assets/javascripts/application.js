@@ -16,6 +16,85 @@
 //= require bootstrap
 //= require_tree .
 
+// function entendimentoAsyncrono(){
+//   alert("001")
+
+//   fetch('http://localhost:3000/contatos.json')
+//   .then(response => {
+//     return response.json()
+//   })
+//   .then(data => {
+//     alert("002")
+
+//     fetch('http://localhost:3000/contatos.json')
+//     .then(response => {
+//       return response.json()
+//     })
+//     .then(novo_dado => {
+
+//       fetch('http://localhost:3000/contatos.json')
+//       .then(response => {
+//         return response.json()
+//       })
+//       .then(terceiro_dado => {
+//         alert("003")
+//         // Callback - manipular os dados retornados aqui
+//         console.log(data); // Exemplo: exibindo os dados no console
+//         console.log(novo_dado); // Exemplo: exibindo os dados no console
+//         console.log(terceiro_dado); // Exemplo: exibindo os dados no console
+//         alert("004")
+//       })
+//       .catch(error => {
+//         // Callback - manipular erros aqui
+//         console.error(error);
+//       });
+
+
+//       // Callback - manipular os dados retornados aqui
+//       console.log(dado); // Exemplo: exibindo os dados no console
+//       console.log(novo_dado); // Exemplo: exibindo os dados no console
+
+//       alert("005")
+//     })
+//     .catch(error => {
+//       // Callback - manipular erros aqui
+//       console.error(error);
+//     });
+
+
+
+//     alert("006")
+
+//     console.log(data); // Exemplo: exibindo os dados no console
+//   })
+//   .catch(error => {
+//     // Callback - manipular erros aqui
+//     console.error(error);
+//   });
+
+
+//   alert("007")
+
+// }
+
+
+
+// async function entendimentoAsyncronoAwait(){
+//   alert("1")
+//   data = await fetch('http://localhost:3000/contatos.json')
+//   alert("2")
+//   data2 = await fetch('http://localhost:3000/contatos.json')
+//   alert("3")
+//   data3 = await fetch('http://localhost:3000/contatos.json')
+//   alert("4")
+
+// }
+
+// // entendimentoAsyncrono();
+// entendimentoAsyncronoAwait();
+
+
+
 const excluir = async (url) => {
     if(confirm("Confirma ?")){
         try { 

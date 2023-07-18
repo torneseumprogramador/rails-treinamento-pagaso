@@ -25,6 +25,7 @@ class ContatoController < ApplicationController
 
     def atualizar
         @contato = Contato.find(params["id"])
+
         @contato.nome = params["nome"]
         @contato.email = params["email"]
         @contato.observacao = params["observacao"]
@@ -47,6 +48,10 @@ class ContatoController < ApplicationController
 
     def lista
         @contatos = Contato.all.order(id: :asc)
+        respond_to do |format|
+            format.html
+            format.json { render json: @contatos }
+        end
     end
 
     def editar

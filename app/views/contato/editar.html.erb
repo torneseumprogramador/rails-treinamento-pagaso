@@ -7,28 +7,7 @@
         </p>
 
         <div style="text-align: left">
-
-          <form action="/contato/<%= @contato.id %>/atualizar" method="post" onsubmit="atualizar(event)">
-            <!--input type="hidden" name="_method" value="put"-->
-            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-
-            <div class="form-group">
-              <label for="nome">Nome *:</label>
-              <input type="text" class="form-control" id="nome" name="nome" value="<%= @contato.nome %>" placeholder="Digite seu nome" required>
-            </div>
-
-            <div class="form-group">
-              <label for="email">E-mail *:</label>
-              <input type="email" class="form-control" id="email" name="email" value="<%= @contato.email %>" placeholder="Digite seu e-mail" required>
-            </div>
-
-            <div class="form-group">
-              <label for="observacao">Observação:</label>
-              <textarea class="form-control" id="observacao" name="observacao" placeholder="Digite sua observação" rows="4"><%= @contato.observacao %></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>
+          <%= render "form", url:"/contato/#{@contato.id}/atualizar", onsubmit:"atualizar(event)", contato:@contato %>
         </div>
       </div>
     </div>
